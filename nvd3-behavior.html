@@ -157,7 +157,7 @@ https://github.com/RenatoUtsch/poly-nvd3/raw/master/LICENSE.txt
             "iron-resize": "_resize"
         },
 
-        created: function() {
+        attached: function() {
             this._container = Polymer.dom(this.root).appendChild(document.createElement("div"));
             this._svg = d3.select(this._container).append("svg");
             this._ajax = document.createElement('iron-ajax');
