@@ -158,10 +158,14 @@ https://github.com/RenatoUtsch/poly-nvd3/raw/master/LICENSE.txt
         },
 
         attached: function() {
-            this._container = Polymer.dom(this.root).appendChild(document.createElement("div"));
+            this._container = Polymer.dom(this.root).appendChild(this._container);
+        },
+
+        created: function() {
+            this._container = document.createElement("div");
             this._svg = d3.select(this._container).append("svg");
-            this._ajax = document.createElement('iron-ajax');
-            this._ajax.handleAs = 'json';
+            // this._ajax = document.createElement('iron-ajax');
+            // this._ajax.handleAs = 'json';
 
             // To add the offsetWidth property to this.root.
             this.style.display = "block";
